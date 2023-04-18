@@ -1,6 +1,38 @@
-<h1><span></span>  Estándares  HTML</h1>
-<meta charset="UTF-8"/>
+<!DOCTYPE html>
+<html>
+<head>
+  <h1><span></span>  Estándares  HTML</h1>
+  <title>Mi pagina Web</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Language" content="es">
 <link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+</head>
+
+<div class="seccion">
+  <h1>Sección en la parte derecha superior</h1>
+  <p>Contenido de la sección</p>
+</div>
+
+<div class="container">
+  <center> <div class="btn-container">
+      <button onclick="cambiarTamanioLetra(12)">A-</button>
+      <button onclick="cambiarTamanioLetra(16)">A</button>
+      <button onclick="cambiarTamanioLetra(20)">A+</button>
+  </div>
+  <div class="btn-container">
+      <button onclick="cambiarColorFondo('#ffffff')">Fondo Blanco</button>
+      <button onclick="cambiarColorFondo('#c0c0c0')">Fondo Violeta</button>
+      <button onclick="cambiarColorFondo('#000000')">Fondo Negro</button>
+  </div>
+  <div class="btn-container">
+      <button onclick="cambiarTipoLetra('Arial')">Arial</button>
+      <button onclick="cambiarTipoLetra('Times New Roman')">Times New Roman</button>
+      <button onclick="cambiarTipoLetra('Calibri')">Calibri Light</button>
+  </center>
+  </div>
+
+</div>
 <header>
 <section>
 <a href="" id="logo" target="_blank">Informacion</a>
@@ -10,10 +42,11 @@
 
 <nav>
 <ul>
-<li><a href="#logo"><i class="icon-home"></i>QUE ES HML</a></li>
+<li><a href="#logo"><i class="icon-home"></i>QUE ES HTML</a></li>
 <li><a href="#about"><i class="icon-user"></i>QUE ES CSS</a></li>
 <li><a href="#portfolio"><i class="icon-thumbs-up-alt"></i>QUE ES JS</a></li>
-
+<!--<li><a href="#portfolio"><i class="icon-thumbs-up-alt"></i>Contáctenos</a></li>
+-->
 </ul>
 </nav>
 </header>
@@ -43,7 +76,29 @@ dinámicas e interactivas. Permite agregar interactividad, validar formularios y
 efectos visuales en una página web.</p>
 </section>
 
+<section id="about" class="content">
+  <h2>Formulario de Contacto</h2>
 
+  <div class="container">
+    <h1>Formulario de Contacto</h1>
+    <form onsubmit="return validarFormulario()" method="post" action="enviar_formulario.php">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <span id="errorNombre" class="error"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span id="errorEmail" class="error"></span>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+        <span id="errorMensaje" class="error"></span>
+
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+
+  </section>
 
 <footer>
 <ul class="social">
@@ -55,3 +110,6 @@ efectos visuales en una página web.</p>
 <li><a href="https://www.instagram.com/mayursuthar2693/" target="_blank"><i class="icon-instagram"></i></a></li>
 </ul>
 </footer>
+
+
+</html>
